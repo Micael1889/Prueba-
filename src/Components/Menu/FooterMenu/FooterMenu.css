@@ -1,0 +1,57 @@
+.iconFooter {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem; /* más controlado que xx-large */
+  padding: 0.4rem;
+  border-radius: 0.7rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  filter: grayscale(40%);
+}
+
+.iconFooter:hover {
+  transform: scale(1.15);
+  filter: grayscale(0%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.active {
+  transform: scale(1.2);
+  background-color: #b1a59c;
+  border-radius: 0.7rem;
+  padding: 0.3rem;
+  filter: grayscale(0%);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+}
+
+.footerPP {
+  background: linear-gradient(135deg, #b19583, #d2b49c);
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.fondoDiv {
+  background-color: transparent;
+  padding: 0.7rem;
+  height: 6rem;
+}
+
+/* Si querés mostrar el número del carrito */
+.cantArt {
+  position: absolute;
+  top: 0.2rem;
+  right: 1.2rem;
+  background: rgb(133, 112, 43);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 0.35rem 0.55rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out;
+}
+
+.cantArt:hover {
+  transform: scale(1.15);
+}

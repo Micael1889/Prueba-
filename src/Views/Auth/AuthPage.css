@@ -1,0 +1,19 @@
+* {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.portada {
+  background-image: url(https://imgserzen.s3.amazonaws.com/wp-content/uploads/2025/07/cafeterias-cdmx-mejor-valoradas-google-800x600.jpg);
+  background-size: cover;
+  background-position: center;
+  width: 60%;
+}
+
+.form {
+  width: 100%;
+}
+
+@media (width < 990px) {
+  .portada {
+    display: none;
+  }
+}

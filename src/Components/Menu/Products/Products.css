@@ -1,0 +1,167 @@
+/* Estilos existentes y generales */
+.price {
+  padding: 0.5rem 1rem;
+  background-color: rgba(59, 49, 49, 0.366);
+  border-bottom-right-radius: 0.25rem;
+}
+
+.product-card {
+  width: 18rem;
+  height: 400px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container {
+  overflow: hidden;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card-flipper:not(.is-flipped) .product-card:hover .image-container img {
+  transform: scale(1.05);
+}
+
+/* Botones de acción (Comprar y Detalle) */
+.btn-buy-animated,
+.btn-detail-animated {
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  border-radius: 2rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.btn-buy-animated {
+  background-color: #6a4f41;
+  border-color: #6a4f41;
+}
+
+.btn-buy-animated:hover {
+  background-color: #896756;
+  border-color: #896756;
+}
+
+.btn-detail-animated {
+  background-color: #8c8c8c;
+  border-color: #8c8c8c;
+}
+
+.btn-detail-animated:hover {
+  background-color: #a0a0a0;
+  border-color: #a0a0a0;
+}
+
+/* Animación de los botones al pasar el mouse por la tarjeta */
+/* Modificado: Solo aplica el hover cuando el flipper NO está volteado */
+.card-flipper:not(.is-flipped) .product-card:hover .btn-buy-animated,
+.card-flipper:not(.is-flipped) .product-card:hover .btn-detail-animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Botones de tamaño */
+/* Modificado: Solo aplica el hover cuando el flipper NO está volteado */
+.card-flipper:not(.is-flipped) .sizeButton:hover {
+  background-color: #6a4f41;
+  color: #ffffff; /* Color de texto al hacer hover */
+}
+
+.sizeButton {
+  color: #000000;
+  background-color: transparent;
+  border: 1px solid #6a4f41;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.sizes {
+  padding: 0.5rem 1rem;
+  background-color: rgba(239, 233, 233, 0.715);
+  border-bottom-right-radius: 0.25rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card-flipper:not(.is-flipped) .product-card:hover .sizes {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.favorite {
+  margin: 2%;
+  padding: 2%;
+  width: 15%;
+  height: 15%;
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.favorite:hover {
+  background-color: transparent;
+}
+/* --- ESTILOS PARA LA ANIMACIÓN DE GIRO DE LA TARJETA --- */
+
+.card-flip-container {
+  perspective: 1000px;
+  width: 18rem;
+  height: 400px;
+  position: relative;
+}
+
+.card-flipper {
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-flipper.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+  z-index: 2;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.text-coffe {
+  color: #890202;
+}

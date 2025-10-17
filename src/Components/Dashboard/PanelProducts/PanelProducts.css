@@ -1,0 +1,13 @@
+/*
+  PanelProducts.css
+*/
+
+.productos-card {
+  /* Se agrega una transición suave para las transformaciones y sombras */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.productos-card:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta 5px hacia arriba */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
