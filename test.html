@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prueba de Socket.IO</title>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+  </head>
+  <body>
+    <h1>Estado de la conexión: <span id="status">Desconectado</span></h1>
+    <button onclick="emitEvent()">Emitir Evento</button>
+    <ul id="notifications"></ul>
+
+    <script>
+      // Conéctate a tu servidor
+      const socket = io("http://localhost:3001");
+      const status = document.getElementById("status");
+      const notificationsList = document.getElementById("notifications");
+
+      socket.on("connect", () => {
+        console.log("Conectado al servidor!");
+        status.textContent = "Conectado";
+      });
+
+      socket.on("disconnect", () => {
+        console.log("Desconectado del servidor!");
+        status.textContent = "Desconectado";
+      });
+
+      socket.on("notificacion", (data) => {
+        console.log("Notificación recibida:", data);
+        const li = document.createElement("li");
+        li.textContent = `Notificación: ${
+          data.mensaje
+        } (${new Date().toLocaleTimeString()})`;
+        notificationsList.appendChild(li);
+      });
+
+      function emitEvent() {
+        socket.emit("miEvento", { mensaje: "Hola desde el cliente web" });
+      }
+    </script>
+  </body>
+</html>
